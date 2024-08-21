@@ -263,7 +263,7 @@ Each message received by Transactional Outbox Pattern subscribers are first writ
 We will keep using the same 4 example messages as in [this](#using-the-api-with-postman) section. Only 2 of these messages will have correctly formatted NHI numbers: this means that 2 messages will remain in the Postgres database. To read these database entries, we can use the `pgadmin` container.
 
 You can access the pgAdmin dashboard at [http://localhost:5050/](http://localhost:5050/)
-1. Login using the pgadmin service environment variables defined in the `docker-compose.yml` file:
+1. Login using the pgadmin service environment variables defined in the `docker-compose_subscribers_top.yml` file:
     * The email address field is defined under the environment variable `PGADMIN_DEFAULT_EMAIL`
     * The password field is defined under the environment variable `PGADMIN_DEFAULT_PASSWORD`
 
@@ -272,8 +272,8 @@ You can access the pgAdmin dashboard at [http://localhost:5050/](http://localhos
     * Navigate to the Connection tab
     * For the `host name/address`, use the name of the Postgres container `db-birth-q-outbox`
     * Make sure the port field is `5432`
-    * the `Username` field is defined by the `POSTGRES_USER` environment variable in the `docker-compose.yml` file for the `db-birth-q-outbox` container
-    * the `Password` field is defined by the `POSTGRES_PASSWORD` environment variable in the `docker-compose.yml` file for the `db-birth-q-outbox` container
+    * the `Username` field is defined by the `POSTGRES_USER` environment variable in the `docker-compose_subscribers_top.yml` file for the `db-birth-q-outbox` container
+    * the `Password` field is defined by the `POSTGRES_PASSWORD` environment variable in the `docker-compose_subscribers_top.yml` file for the `db-birth-q-outbox` container
     * Click save and, in the Object explorer, under Servers you should see your newly saved server
 
 3. If you now navigate in the Object Explorer to `Servers>{name you gave the database server}>Databases>admin`, you will find this is the Postgres database holding the `outbox_table` table. To view all entries in the table, select the Query tool in the `Tools` tab, then type and run the following SQL query: 
