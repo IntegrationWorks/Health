@@ -17,7 +17,7 @@ This project sets up a React Event app with a PostgreSQL database, pgAdmin using
 In the project directory, run:
 
 ```bash
-cd event-app
+cd event-app/frontend
 npm install
 npm start
    ```
