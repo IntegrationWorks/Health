@@ -40,9 +40,9 @@ services:
     networks:
       - nems_test_harness_common-network
 
-  pgadmin:
+  pgadminReact:
     image: dpage/pgadmin4
-    container_name: pgadmin
+    container_name: pgadminReact
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: admin

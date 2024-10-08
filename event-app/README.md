@@ -1,24 +1,14 @@
 # Event App
 
-This is a simple React application with a header and a Create Event page.
-
-# React Event App with PostgreSQL, pgAdmin, and Solace Integration
-
 This project sets up a React Event app with a PostgreSQL database, pgAdmin using Docker, and integrates with the Solace broker project.
 
 ## Setup Instructions
 
 ###  Step 1. Set up the test Publisher 
-Clone the Solace broker project from the provided GitHub repository:
-```bash
-git clone https://github.com/IntegrationWorks/Health/tree/main/NEMS_Test_Harness
-```
 
-Follow the setup instructions in the Solace broker project's README to get it up and running.
+Follow the setup instructions in the Solace broker project's README  https://github.com/IntegrationWorks/Health/blob/main/NEMS_Test_Harness/README.md to get it up and running.
 
-Ensure the Solace test publisher is configured to accept messages from React backend server.
-
-The Solace Test publisher should be running for te React app to send the events. 
+Ensure the Solace test publisher is configured to accept messages from React backend server as the Solace Test publisher should be running for te React app to send the events. 
 
 ### Step 2: Docker Setup
 
@@ -43,9 +33,15 @@ docker-compose up --build
 3. Add a new server in pgAdmin with the following details:
    - **Name**: eventsdb
    - **Host**: postgres-db
+   - **Maintenance database**:postgres
    - **Port**: 5432
    - **Username**: admin
    - **Password**: admin
+
+If you now navigate in the Object Explorer to Servers>eventsdb>Databases>admin, you will find this is the Postgres database holding the outbox_table table. To view all entries in the table, select the Query tool in the Tools tab, then type and run the following SQL query:
+
+SELECT * FROM outbox_table
+You should see 2 entries, they should have the NHI Numbers GH43456 and Jeremy and both have a status field of failed
 
 
 Now navigate to http://localhost:3001/ to view the frontend.

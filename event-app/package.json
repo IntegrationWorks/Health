@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "csurf": "^1.10.0",
     "solace": "^1.2.0"
   }
 }

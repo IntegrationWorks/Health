@@ -1,0 +1,29 @@
+/* Styling to match the layout of the provided design */
+
+.custom-modal .modal-dialog {
+    max-width: 500px;
+  }
+  
+  .publish-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .publish-form .form-group {
+    width: 100%;
+  }
+  
+  .publish-form .form-control {
+    width: 100%;
+  }
+  
+  .publish-btn-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .publish-btn {
+    margin-top: 10px;
+  }
+  
