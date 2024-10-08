@@ -40,8 +40,11 @@ docker-compose up --build
 
 If you now navigate in the Object Explorer to Servers>eventsdb>Databases>admin, you will find this is the Postgres database holding the outbox_table table. To view all entries in the table, select the Query tool in the Tools tab, then type and run the following SQL query:
 
-SELECT * FROM outbox_table
-You should see 2 entries, they should have the NHI Numbers GH43456 and Jeremy and both have a status field of failed
+```bash
+SELECT * FROM events
+```
+
+You should see an entry, they should have the event details.
 
 
 Now navigate to http://localhost:3001/ to view the frontend.
